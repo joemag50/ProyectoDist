@@ -129,6 +129,7 @@ public class Host extends MainWindow implements Runnable
 			ex.printStackTrace();
 		}
 		Principal.segunda_vuelta = true;
+		Principal.first_iteration = false;
 	}
 	
 	//JCGE: Este es el metodo que se encarga de tomar las acciones en los botones

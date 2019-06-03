@@ -126,6 +126,7 @@ public class Server extends MainWindow implements Runnable
         }
 		Principal.segunda_vuelta = true;
         Principal.es_servidor = false;
+		Principal.first_iteration = false;
 	}
 
 	public void setLabelsText(ArrayList<Client> clients) {
