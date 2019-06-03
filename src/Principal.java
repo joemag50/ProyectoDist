@@ -52,6 +52,7 @@ public class Principal extends MainWindow
 		//while (true) {
 			if (first_iteration) {
 				this.finGUI();
+				first_iteration = false;
 			}
 			
 			while (segunda_vuelta) {
