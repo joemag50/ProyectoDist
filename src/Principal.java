@@ -24,7 +24,8 @@ public class Principal extends MainWindow
 	ObjectOutputStream oos = null;
 	Socket s = null;
 	ServerSocket ss = null;
-
+	public static boolean es_servidor = false;
+	public static boolean segunda_vuelta = false;
 	Principal () {
 		MyLabel l_titulo = new MyLabel("¿Mi computadora es?");
 		JPanel loginBox = new JPanel();
@@ -46,10 +47,42 @@ public class Principal extends MainWindow
 		panelCentro.add(loginBox);
 	}
 
-	public static void main(String[] args) {
+	public void Switcher() {
+		boolean first_iteration = true;
+		//while (true) {
+			if (first_iteration) {
+				this.finGUI();
+			}
+			
+			while (segunda_vuelta) {
+				if (Principal.es_servidor) {
+					Server s = new Server();
+					s.finGUI();
+					this.dispose();
+		            try{
+		                s.run_me = true;
+		                Thread t1 = new Thread(s);
+		                t1.start();
+		            } catch(Exception ex){
+		                ex.printStackTrace();
+		            }
+				}
+				
+				else if (!Principal.es_servidor) {
+					Host h = new Host();
+					h.finGUI();
+					this.dispose();
+		            try{
+		                h.run_me = true;
+		                Thread t1 = new Thread(h);
+		                t1.start();
+		            } catch(Exception ex){
+		                ex.printStackTrace();
+		            }
+				}
+			}
 
-		Principal p = new Principal();
-		p.finGUI();
+		//}
 	}
 
 	public void actionPerformed(ActionEvent arg0)

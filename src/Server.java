@@ -27,7 +27,8 @@ public class Server extends MainWindow implements Runnable
 
 	public boolean run_me = false;
 	public int puerto = 5400;
-
+	public boolean terminado = false;
+	
 	Server ()
 	{
 		labels = new ArrayList<MyLabel>();
@@ -123,6 +124,8 @@ public class Server extends MainWindow implements Runnable
         } catch(Exception ex){
             ex.printStackTrace();
         }
+		Principal.segunda_vuelta = true;
+        Principal.es_servidor = false;
 	}
 
 	public void setLabelsText(ArrayList<Client> clients) {

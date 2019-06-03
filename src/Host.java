@@ -29,6 +29,7 @@ public class Host extends MainWindow implements Runnable
 
 	public boolean run_me = false;
 	public int puerto = 5400;
+	public boolean terminado = false;
 
 	Host()
 	{
@@ -110,6 +111,9 @@ public class Host extends MainWindow implements Runnable
 					String myIP = c.ip;
 					if ( myIP.equals(message) ) {
 						this.run_me = false;
+						Principal.es_servidor = true;
+					} else {
+						Principal.es_servidor = false;
 					}
 				}
 				catch (Exception ex)
@@ -124,6 +128,7 @@ public class Host extends MainWindow implements Runnable
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
+		Principal.segunda_vuelta = true;
 	}
 	
 	//JCGE: Este es el metodo que se encarga de tomar las acciones en los botones
