@@ -49,7 +49,7 @@ public class Principal extends MainWindow
 
 	public void Switcher() {
 		boolean first_iteration = true;
-		//while (true) {
+		while (true) {
 			if (first_iteration) {
 				this.finGUI();
 				first_iteration = false;
@@ -91,7 +91,7 @@ public class Principal extends MainWindow
 				}
 			}
 
-		//}
+		}
 	}
 
 	public void actionPerformed(ActionEvent arg0)
