@@ -33,6 +33,7 @@ public class Host extends MainWindow implements Runnable
 
 	Host()
 	{
+        Principal.es_servidor = false;
 		MyLabel l_ip = new MyLabel("IP Servidor:");
 		txt_ip = new JTextField(50);
 		txt_ip.requestFocusInWindow();
@@ -112,8 +113,6 @@ public class Host extends MainWindow implements Runnable
 					if ( myIP.equals(message) ) {
 						this.run_me = false;
 						Principal.es_servidor = true;
-					} else {
-						Principal.es_servidor = false;
 					}
 				}
 				catch (Exception ex)
