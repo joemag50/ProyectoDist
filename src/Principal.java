@@ -55,8 +55,11 @@ public class Principal extends MainWindow
 				first_iteration = false;
 			}
 			
-			while (segunda_vuelta) {
+			while (Principal.segunda_vuelta) {
+				System.out.println("Entro while");
+				
 				if (Principal.es_servidor) {
+					System.out.println("Entro server");
 					Server s = new Server();
 					s.finGUI();
 					this.dispose();
@@ -67,9 +70,12 @@ public class Principal extends MainWindow
 		            } catch(Exception ex){
 		                ex.printStackTrace();
 		            }
+					System.out.println("salio server");
+
 				}
 				
 				else if (!Principal.es_servidor) {
+					System.out.println("Entro host");
 					Host h = new Host();
 					h.finGUI();
 					this.dispose();
@@ -80,6 +86,8 @@ public class Principal extends MainWindow
 		            } catch(Exception ex){
 		                ex.printStackTrace();
 		            }
+					System.out.println("Salio host");
+
 				}
 			}
 
