@@ -119,6 +119,9 @@ public class Server extends MainWindow implements Runnable
                     if( s != null ) s.close();
                 }
             }
+            Principal.segunda_vuelta = true;
+            Principal.es_servidor = false;
+            Principal.first_iteration = false;
         } catch(BindException ex){
 
         } catch(Exception ex){

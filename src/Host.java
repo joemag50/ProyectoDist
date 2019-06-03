@@ -124,6 +124,8 @@ public class Host extends MainWindow implements Runnable
 					if( s != null ) s.close();
 				}
 			}
+            Principal.segunda_vuelta = true;
+            Principal.first_iteration = false;
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
