@@ -26,6 +26,8 @@ public class Principal extends MainWindow
 	ServerSocket ss = null;
 	public static boolean es_servidor = false;
 	public static boolean segunda_vuelta = false;
+	public static boolean first_iteration = true;
+
 	Principal () {
 		MyLabel l_titulo = new MyLabel("¿Mi computadora es?");
 		JPanel loginBox = new JPanel();
@@ -48,11 +50,9 @@ public class Principal extends MainWindow
 	}
 
 	public void Switcher() {
-		boolean first_iteration = true;
 		while (true) {
 			if (first_iteration) {
 				this.finGUI();
-				first_iteration = false;
 			}
 			
 			while (Principal.segunda_vuelta) {
