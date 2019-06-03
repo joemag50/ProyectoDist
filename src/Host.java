@@ -121,34 +121,6 @@ public class Host extends MainWindow implements Runnable
 					if( s != null ) s.close();
 				}
 			}
-			
-            if( oos !=null ) oos.close();
-            if( ois !=null ) ois.close();
-            if( s != null ) s.close();
-
-			Server server = new Server();
-			server.finGUI();
-			server.puerto++;
-			this.dispose();
-            try{
-                server.run_me = true;
-                Thread t1 = new Thread(server);
-                t1.start();
-            } catch(Exception ex){
-                ex.printStackTrace();
-            }
-        } catch(BindException ex){
-			Server server = new Server();
-			server.finGUI();
-			server.puerto++;
-			this.dispose();
-            try{
-                server.run_me = true;
-                Thread t1 = new Thread(server);
-                t1.start();
-            } catch(Exception ex1){
-                ex1.printStackTrace();
-            }
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
