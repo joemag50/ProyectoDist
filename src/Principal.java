@@ -90,6 +90,7 @@ public class Principal extends MainWindow
 		String boton = arg0.getActionCommand();
 		if (boton == "Host")
 		{
+			Principal.es_servidor = false;
 			Host h = new Host();
 			h.finGUI();
 			this.dispose();
@@ -105,6 +106,7 @@ public class Principal extends MainWindow
 
 		if (boton == "Server")
 		{
+			Principal.es_servidor = true;
 			Server s = new Server();
 			s.finGUI();
 			this.dispose();
